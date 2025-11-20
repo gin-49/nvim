@@ -7,6 +7,7 @@ return {
 		-- Assign linters to filetypes
 		lint.linters_by_ft = {
 			lua = { "luacheck" },
+			python = { "ruff " },
 		}
 
 		-- Auto-lint on save or leaving insert mode
