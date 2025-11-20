@@ -1,30 +1,30 @@
 local opts = { noremap = true, silent = true }
 
 -- Tabs
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts)   -- open new tab
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 
 -- Picker
 vim.keymap.set("n", "<leader>s<leader>", function()
-        require("snacks").picker.smart()
+	require("snacks").picker.smart()
 end, { desc = "Smart Find" })
 vim.keymap.set("n", "<leader>s/", function()
-        require("snacks").picker.grep()
+	require("snacks").picker.grep()
 end, { desc = "Grep" })
 vim.keymap.set("n", "<leader>sk", function()
-        require("snacks").picker.keymaps()
+	require("snacks").picker.keymaps()
 end, { desc = "Keymaps" })
 vim.keymap.set("n", "<leader>sr", function()
-        require("snacks").picker.recent()
+	require("snacks").picker.recent()
 end, { desc = "Recent" })
 vim.keymap.set("n", "<leader>sp", function()
-        require("snacks").picker.projects()
+	require("snacks").picker.projects()
 end, { desc = "Projects" })
 vim.keymap.set("n", "<leader>sm", function()
-        require("snacks").picker.marks()
+	require("snacks").picker.marks()
 end, { desc = "Marks" })
 vim.keymap.set("n", "<leader>sd", function()
-        require("snacks").picker.diagnostics_buffer()
+	require("snacks").picker.diagnostics_buffer()
 end, { desc = "Diagnostics" })
 
 -- not saving deleted text
@@ -39,14 +39,14 @@ vim.keymap.set("n", "<leader>b", "<cmd>enew<CR>", opts)
 
 -- Change buffer with leader + number
 for i = 1, 9 do
-        vim.keymap.set("n", "<leader>" .. i, function()
-                local buflist = vim.fn.getbufinfo({ buflisted = 1 })
-                if buflist[i] then
-                        vim.cmd("buffer " .. buflist[i].bufnr)
-                else
-                        vim.notify("No buffer in slot " .. i, vim.log.levels.WARN)
-                end
-        end, { desc = "Go to buffer " .. i })
+	vim.keymap.set("n", "<leader>" .. i, function()
+		local buflist = vim.fn.getbufinfo({ buflisted = 1 })
+		if buflist[i] then
+			vim.cmd("buffer " .. buflist[i].bufnr)
+		else
+			vim.notify("No buffer in slot " .. i, vim.log.levels.WARN)
+		end
+	end, { desc = "Go to buffer " .. i })
 end
 
 -- Save with ctrl+s
@@ -61,29 +61,37 @@ vim.keymap.set("i", "<C-q>", ":q<CR>")
 
 -- Flash
 vim.keymap.set({ "n", "x", "o" }, ",", function()
-        require("flash").jump()
+	require("flash").jump()
 end, { desc = "Flash" })
 vim.keymap.set({ "n", "x", "o" }, "<", function()
-        require("flash").treesitter()
+	require("flash").treesitter()
 end, { desc = "Flash Treesitter" })
 vim.keymap.set("o", "r", function()
-        require("flash").remote()
+	require("flash").remote()
 end, { desc = "Remote Flash" })
 
 -- Oil related in oil.lua
+vim.keymap.set("n", "<leader>p", function()
+	require("oil").toggle_float()
+end, { desc = "Toggle Oil file explorer" })
 
 -- Undo Tree
 vim.keymap.set("n", "<leader>u", function()
-        require("undotree").toggle()
+	require("undotree").toggle()
 end, { desc = "Toggle Undotree" })
 
 -- Terminal
 vim.keymap.set("n", "<leader>tt", function()
-        require("snacks").terminal()
+	require("snacks").terminal()
 end, { desc = "Toggle Terminal" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- Trailspace
 vim.keymap.set("n", "<leader>l", function()
-        require("mini.trailspace").trim()
+	require("mini.trailspace").trim()
 end, { desc = "Trim Trailspaces" })
+
+-- Formatter
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format({ async = false })
+end, { desc = "Format with Conform" })

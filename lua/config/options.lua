@@ -37,7 +37,6 @@ vim.o.cursorline = true              -- Highlight the current line (default: fal
 vim.o.splitbelow = true              -- Force all horizontal splits to go below current window (default: false)
 vim.o.splitright = true              -- Force all vertical splits to go to the right of current window (default: false)
 vim.o.hlsearch = false               -- Set highlight on search (default: true)
-vim.o.showmode = false               -- We don't need to see things like -- INSERT -- anymore (default: true)
 vim.opt.termguicolors = true         -- Set termguicolors to enable highlight groups (default: false)
 vim.o.whichwrap = "bs<>[]hl"         -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 vim.o.numberwidth = 2                -- Set number column width to 2 {default 4} (default: 4)

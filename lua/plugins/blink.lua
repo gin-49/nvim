@@ -26,6 +26,12 @@ return {
 		--
 		-- See the fuzzy documentation for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },
+
+		completion = {
+			menu = { border = "single" },
+			documentation = { window = { border = "single" } },
+		},
+		signature = { window = { border = "single" } },
 	},
 	opts_extend = { "sources.default" },
 }
