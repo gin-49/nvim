@@ -8,6 +8,7 @@ return {
                 lint.linters_by_ft = {
                         lua = { "luacheck" },
                         python = { "ruff" },
+                        c = {"cpplint"},
                 }
 
                 -- Auto-lint on save or leaving insert mode

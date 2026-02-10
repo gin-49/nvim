@@ -1,6 +1,6 @@
 return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        event = "VeryLazy", -- lazy-load immediately after Neovim starts
+        event = "VimEnter", -- lazy-load immediately after Neovim starts
         dependencies = {
                 "mason-org/mason.nvim",
         },
@@ -11,6 +11,9 @@ return {
                         "pyright",
                         "ruff",
                         "black",
+                        "clangd",
+                        "clang-format",
+                        "cpplint",
                 },
                 auto_update = true,
                 debug = true,
