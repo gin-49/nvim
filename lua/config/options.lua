@@ -3,9 +3,6 @@ vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
 end)
 
-vim.o.background = "dark"
-vim.cmd.colorscheme("melange")
-
 vim.g.have_nerd_font = true
 vim.o.number = true
 vim.wo.number = true
@@ -13,7 +10,7 @@ vim.o.relativenumber = true
 
 vim.o.showmode = false
 
-vim.o.wrap = false
+vim.o.wrap = true
 vim.o.breakindent = true
 
 vim.o.undofile = true
