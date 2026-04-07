@@ -1,1 +1,1 @@
-support for : Lua, Python
+support for : Lua, Python, C, typst
