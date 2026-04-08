@@ -1,1 +1,1 @@
-support for : Lua, Python, C, typst
+:LspInstall for new filetype
