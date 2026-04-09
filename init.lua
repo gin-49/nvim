@@ -90,7 +90,7 @@ end
 
 -- Adding Plugins
 vim.pack.add({
-	"https://github.com/ray-x/aurora",
+  "https://github.com/nyoom-engineering/oxocarbon.nvim",
 	"https://github.com/folke/snacks.nvim",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/chomosuke/typst-preview.nvim",
@@ -131,9 +131,8 @@ require("nvim-treesitter").setup({
 })
 
 -- Colorscheme
-vim.cmd("set background=dark")
-vim.g.aurora_italic = 1
-vim.cmd("colorscheme aurora")
+vim.opt.background = "dark"
+vim.cmd.colorscheme "oxocarbon"
 
 -- Snacks
 if not require("snacks").did_setup then
